@@ -21,6 +21,7 @@ li {
 body {
   font-family: Arial, sans-serif;
   color: #333; /* Dark grey text color */
+  background-color: #ededef;
 }
 
 /* Top navigation styles */
@@ -69,7 +70,7 @@ a.icon {
 
 .container {
   max-width: 1200px;
-  margin: 30px;
+  margin: 70px;
   padding: 0 20px;
 }
 
@@ -119,19 +120,23 @@ a.icon {
 .project-thumbnail img {
   width: 100%;
 }
+.thumbnail-img {
+  filter: none;
+}
+/* Contact card styles */
 
 .contacts {
   display: flex;
+  flex-wrap: wrap;
   height: 70px;
-  margin-bottom: 20px;
 }
 .contact-card {
-  margin-right: 20px;
-  margin-bottom: 20px;
 }
 .contact-details {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  margin-bottom: 20px;
 }
 .contact-details h3 {
   margin-right: 10px;
@@ -143,7 +148,32 @@ a.icon {
   font-size: 60px;
   color: #333;
 }
-
+/* About page styles*/
+.aboutpage {
+  background-color: #ededef;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 850px;
+}
+.hero-text {
+  flex: 1;
+}
+img {
+  filter: grayscale(100%);
+  margin-left: 40px;
+  max-width: 100%;
+}
+.portrait {
+  width: 200px;
+  margin-left: 40px;
+  max-width: 100%;
+}
+.hello {
+  font-size: 20px;
+  text-align: left;
+}
 /* Footer styles */
 footer {
   background-color: #333;
@@ -155,13 +185,28 @@ footer {
   bottom: 0;
 }
 
-@media (max-width: 1288px) {
-  .hero_title {
+@media screen and (min-width: 1200px) {
+  hero_title {
     font-size: 3rem; /* Adjust font size as needed */
   }
 
   .hero_desc {
     font-size: 1.8rem; /* Adjust font size as needed */
+  }
+  .aboutpage {
+    background-image: url(/img/fabrice-villard-Jrl_UQcZqOc-unsplash.jpg); /* Add your background image URL */
+    background-size: cover;
+    background-position: right;
+  }
+
+  .hero-text {
+    flex: none; /* Remove flex-grow on large screens */
+    width: 50%; /* Set width of hero-text on large screens */
+    padding-right: 20px; /* Add padding to separate text from background image */
+  }
+
+  .portrait {
+    margin-left: auto; /* Move the image to the right on large screens */
   }
 }
 @media (max-width: 1000px) {
@@ -173,6 +218,12 @@ footer {
     font-size: 1.6rem; /* Adjust font size as needed */
   }
 }
+@media screen and (max-width: 520px) {
+  .contactpage {
+    background-size: cover; /* Ensure background image covers the entire container */
+  }
+}
+
 @media (max-width: 380px) {
   .hero_title {
     font-size: 1.8rem; /* Reuse font size from 1288px breakpoint */
@@ -180,5 +231,8 @@ footer {
 
   .hero_desc {
     font-size: 1rem; /* Reuse font size from 1288px breakpoint */
+  }
+  .container {
+    margin: 20px;
   }
 }
